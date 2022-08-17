@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -N Weight
+#PBS -l nodes=1:ppn=1
+##PBS -l walltime=999:00:00
+##PBS -q ser
+##PBS -V
+##PBS -S /bin/bash
+
+
+
+cd $PBS_O_WORKDIR
+
+echo "Beginning ..."
+ 
+rm *.e*
+rm *.o*
+
+c++ -std=c++11 ../Basic.cpp ../../wgy.cpp  -o out
+
+./out    
+
+echo "Task DONE"
+          
